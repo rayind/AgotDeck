@@ -53,7 +53,7 @@ def read_deck_lists(deck_list_content_html):
         soup = BeautifulSoup(list_html)
         decks_html_cont = soup.findAll("div", {"class":"sub-panel"})[0]
         decks_html = decks_html_cont.findAll("li")
-        for deck_html in decks_html[:20 * 2]:
+        for deck_html in decks_html[:40 * 2]:
             deck_info_html = deck_html.findAll("a", {"class":"underlineable"})
             if len(deck_info_html) < 2:
                 continue

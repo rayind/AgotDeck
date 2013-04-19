@@ -6,7 +6,10 @@ json_fp.close()
 json_fp = file("/home/HSLPDEV7/agot/data/card_pool1.data")
 card_pool = json.load(json_fp)
 json_fp.close()
-cards_re = relation['5']
+json_fp = file("/home/HSLPDEV7/agot/data/card_pool1.data")
+statistic = json.load(json_fp)
+json_fp.close()
+cards_re = relation['4440']
 cards_re_s = sorted(cards_re, key = lambda x:cards_re[x], reverse=True)
 result = [
     "name:%s, set:%s, rate:%s"
