@@ -4,6 +4,7 @@ import time
 import re
 import json
 from BeautifulSoup import BeautifulSoup
+import deck_config
 DECK_LIST_URL = "http://www.agotcards.org/deck/house/"
 LOGIN_URL = "http://www.agotcards.org/access/login"
 DOMAIN = "http://www.agotcards.org"
@@ -133,7 +134,7 @@ def read_card(card_html, card_type):
 def output_deck(decks):
     for deck_id in decks:
         deck = decks[deck_id]
-        deck_file = file("/home/HSLPDEV7/agot/decks20/%s.deck" % (deck["info"]["id"]), "w+")
+        deck_file = file("%s%s.deck" % (deck_config.DECK_DIR, deck["info"]["id"]), "w+")
         file_json = json.dumps(deck)
         deck_file.write(file_json)
         deck_file.close()

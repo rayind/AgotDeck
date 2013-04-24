@@ -32,7 +32,7 @@ def update_card_relation(card_list, card_relation):
         for related_card in card_list:
             related_card_id = related_card[0]
             related_card_type = related_card[2]
-            related_card_num = related_card[1] if related_card_type ["Plots", "House Card", "Agendas"] else 3
+            related_card_num = related_card[1] if related_card_type in ["Plots", "House Card", "Agendas"] else 3
             if related_card_id == card_id:
                 continue
             card_relation[card_id][related_card_id] += \
